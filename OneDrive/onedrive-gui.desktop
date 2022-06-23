@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1
+Type=Application
+Terminal=False
+Exec=/opt/OneDrive/OneDriveGUI.AppImage
+Name=OneDrive GUI
+Icon=/usr/share/icons/OneDrive/onedrive-ico.png

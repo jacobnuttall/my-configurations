@@ -1,0 +1,15 @@
+Vim
+Git
+TexStudio
+Google Chrome
+FireFox
+Jetbrains Toolbox
+- IntelliJ, PyCharm, Clion, Android Studio, etc.
+FUSE
+Visual Studio Code
+- RemoteSSH, Python, Rainbow CSV, TOML, VIM, etc.
+ImageJ
+Gimp
+Onedrive client for linux
+LibreOffice
+Arduino
