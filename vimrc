@@ -1,5 +1,9 @@
+$VIMRUNTIME/defaults.vim
+
 " Basic Settings ----------------------{{{
 set nocompatible
+
+color industry
 
 " Highlight everything when using search
 set hlsearch
