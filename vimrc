@@ -1,4 +1,4 @@
-$VIMRUNTIME/defaults.vim
+source $VIMRUNTIME/defaults.vim
 
 " Basic Settings ----------------------{{{
 set nocompatible
