@@ -58,6 +58,7 @@ set expandtab
 " 6 -> solid vertical bar
 
 " Set cursor for mode:
+let &t_se= "\e[2 q" " Set cursor on opening vim
 let &t_SI= "\e[6 q" " INSERT mode
 let &t_SR= "\e[4 q" " REPLACE mode
 let &t_EI= "\e[2 q" " NORMAL mode
