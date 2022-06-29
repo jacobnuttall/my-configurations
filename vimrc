@@ -111,6 +111,16 @@ set laststatus=2
 
 " Enable cold folding.
 " Use marker method of folding.
+" Enable cold folding.
+" Use marker method of folding.
+" See: http://vimdoc.sourceforge.net/htmldoc/fold.html#za
+" zo: open fold
+" zc: close fold
+" za: toggle current cell fold
+" zi: toggle all code folding
+" zR: open all folds
+" zM: close all folds
+" zD: remove current fold
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
