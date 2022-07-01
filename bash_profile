@@ -66,11 +66,11 @@ done
 
 if [[ $- == *i* ]]
 then
+    # Commands to run in interactive mode.
     echo -e "${LIGHTCYAN}${BOLD}${ULINE}Hello world!${RESET}\n It is ${BOLD}${GREEN}$(date)${RESET}."
     echo -e "${CURS_BOX_BLINK}"
-        # PLACE YOUR OUTPUT PRODUCING COMMANDS HERE
+        
 else
-        pvenv jnbenv # Python environment to use with Jupyter notebooks
 fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
