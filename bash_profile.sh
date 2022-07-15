@@ -10,26 +10,39 @@ esac
 
 PATH=$PATH:$HOME/.local/bin
 
-alias vncserver="vncserver -localhost yes"
 start_vncserver () {
-	vncserver -geometry "${1}x${2}" :1
+	vncserver -kill :1
+	x=$1
+	y=$2
+	[[ -z "$1" ]] && x=1920
+	[[ -z "$2" ]] && y=$(perl -e "print int($x/1.77778 + 0.99)");
+	echo -e "${LIGHTGREEN}vncserver -localhost yes -geometry \"${x}x${y}\" :1${RESET}${RED}"
+	vncserver -localhost yes -geometry "${x}x${y}" :1
+	echo -e "${RESET}"
 }
 
+alias vncserver="vncserver -localhost yes"
+alias vncserver-start="start_vncserver 1920 1080"
+alias vncserver-kill="vncserver -kill :1"
 alias lsdir="ls --color -al | awk '{print \$(NF)}'"
-if [ -f ~/.local/bin/vim ]; then alias vim=~/.local/bin/vim; fi
 
 pvenv () {
-    echo -e "source ${GREEN}${HOME}/python/virtualenv/${1}/bin/activate${RESET}"
-    source "${HOME}/python/virtualenv/${1}/bin/activate"
+	case $- in
+		*i*) echo -e "source ${GREEN}${HOME}/python/virtualenv/${1}/bin/activate${RESET}"
+		;;
+		*)
+		;;
+	esac
+   	source "${HOME}/python/virtualenv/${1}/bin/activate"
 }
 
 # Make the different text types supported by the terminal
 txttypes=(
-    'RESET'
-    'BOLD'
-    'FAINT'
-    'ITALICS'
-    'ULINE' 
+	'RESET'
+	'BOLD'
+	'FAINT'
+	'ITALICS'
+	'ULINE' 
 )
 read -a txttypecodes <<< $( echo "$(seq 0 4)" | tr '\n' ' ' )
 for i in ${!txttypes[@]}
@@ -39,51 +52,51 @@ done
 
 # The different color codes supported by the terminal.
 colors=(
-    'BLACK'
-    'RED'
-    'GREEN'
-    'YELLOW' 
-    'BLUE'
-    'MAGENTA'
-    'CYAN'
-    'LIGHTGRAY'
-    'GRAY'
-    'LIGHTRED'
-    'LIGHTGREEN'
-    'LIGHTYELLOW'
-    'LIGHTBLUE'
-    'LIGHTMAGENTA'
-    'LIGHTCYAN'
-    'WHITE' 
+	'BLACK'
+	'RED'
+	'GREEN'
+	'YELLOW' 
+	'BLUE'
+	'MAGENTA'
+	'CYAN'
+	'LIGHTGRAY'
+	'GRAY'
+	'LIGHTRED'
+	'LIGHTGREEN'
+	'LIGHTYELLOW'
+	'LIGHTBLUE'
+	'LIGHTMAGENTA'
+	'LIGHTCYAN'
+	'WHITE' 
 )
 read -a fgcolorcodes <<< $( echo "$(seq 30 37) $(seq 90 97)"   | tr '\n' ' ' )
 read -a bgcolorcodes <<< $( echo "$(seq 40 47) $(seq 100 107)" | tr '\n' ' ' )
 for i in ${!colors[@]}; 
 do
-    eval export "${colors[i]}_BG"='"\e[${bgcolorcodes[i]}m"'
-    eval export "${colors[i]}"='"\e[${fgcolorcodes[i]}m"'
+	eval export "${colors[i]}_BG"='"\e[${bgcolorcodes[i]}m"'
+	eval export "${colors[i]}"='"\e[${fgcolorcodes[i]}m"'
 done
 
 # The different cursor styles allowed by the terminal.
 cursorstyles=(
-    'BOX_BLINK'
-    'BOX'
-    'UNDER_BLINK'
-    'UNDER'
-    'LINE_BLINK'
-    'LINE'
+	'BOX_BLINK'
+	'BOX'
+	'UNDER_BLINK'
+	'UNDER'
+	'LINE_BLINK'
+	'LINE'
 )
 read -a cursorstylecodes <<< $( echo "$(seq 1 6)" | tr '\n' ' ' )
 for i in ${!cursorstyles[@]}
 do
-    eval export "CURS_${cursorstyles[i]}"='"\e[${cursorstylecodes[i]} q"'
+	eval export "CURS_${cursorstyles[i]}"='"\e[${cursorstylecodes[i]} q"'
 done
 
 if [[ $- == *i* ]]
 then
-    # Commands to run in interactive mode.
-    echo -e "${LIGHTCYAN}${BOLD}${ULINE}Hello world!${RESET}\n It is ${BOLD}${GREEN}$(date)${RESET}."
-    echo -e "${CURS_BOX_BLINK}"
+	# Commands to run in interactive mode.
+	echo -e "${LIGHTCYAN}${BOLD}${ULINE}Hello world!${RESET}\n It is ${BOLD}${GREEN}$(date)${RESET}."
+	echo -e "${CURS_BOX_BLINK}"
 fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -118,7 +131,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+	xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -155,14 +168,14 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -183,7 +196,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
