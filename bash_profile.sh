@@ -25,6 +25,34 @@ alias vncserver="vncserver -localhost yes"
 alias vncserver-start="start_vncserver 1920 1080"
 alias vncserver-kill="vncserver -kill :1"
 alias lsdir="ls --color -al | awk '{print \$(NF)}'"
+alias giturl="git config --get remote.origin.url"
+alias gituprepopat="git_update_repo_pat_url"
+alias gituprepo="git_update_repo_url"
+alias gitclonepat="git_clone_add_pat"
+
+git_clone_add_pat () {
+	url=$1
+	newurl=$(echo $url | sed "s,://,://$(whoami):$(cat ~/token)@,")
+	echo $newurl
+	git clone $newurl
+}
+
+git_update_repo_pat_url () {
+	# Update the url of a git repository to use a new PAT for gitlab
+	repourl=$(giturl)
+	IFS='@' read -ra URLARR <<< $1
+	newurl="https://$(whoami):$(cat ~/token)@${URLARR[1]}"
+	echo $newurl
+	git remote set-url origin $newurl
+}
+
+git_update_repo_url() {
+	# Update the url of a git repository from clean url (no PAT)
+	url=$1
+	newurl=$(echo $url | sed "s,://,://$(whoami):$(cat ~/token)@,")
+	echo $newurl
+	git remote set-url origin $newurl
+}
 
 pvenv () {
 	case $- in
