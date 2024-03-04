@@ -26,31 +26,61 @@ alias vncserver-start="start_vncserver 1920 1080"
 alias vncserver-kill="vncserver -kill :1"
 alias lsdir="ls --color -al | awk '{print \$(NF)}'"
 alias giturl="git config --get remote.origin.url"
-alias gituprepopat="git_update_repo_pat_url"
-alias gituprepo="git_update_repo_url"
+alias gituprepopaturl="git_update_repo_pat_url"
+alias gituprepourl="git_update_repo_url"
+alias gitresetrepourl="git_reset_repo_url"
 alias gitclonepat="git_clone_add_pat"
+alias lsgittokens="ls ~/.gitlab_tokens"
+alias cancel-all-squeue="cancel_all_squeue"
+alias gitsetrepourl="git remote set-url origin"
+alias mysqueue="squeue -u nuttall1"
+
+cancel_all_squeue() {
+	echo "Canceling jobs: $(squeue -u nuttall1 | awk '{ print $1 }' | grep -v JOBID)"
+	squeue -u nuttall1 | awk '{ print $1 }' | grep -v JOBID | xargs scancel
+}
+
+#getsetrepourl() {
+#	git remote set-url origin $1
+# }
+
+get_token() { 
+	token_name=$1
+	token_path=~/.gitlab_tokens/$token_name
+	cat $token_path
+}
 
 git_clone_add_pat () {
-	url=$1
-	newurl=$(echo $url | sed "s,://,://$(whoami):$(cat ~/token)@,")
-	echo $newurl
+	url=$(giturl)
+	token=$(get_token $1)
+	newurl=$(echo $url | sed "s,://,://$(whoami):$token@,")
 	git clone $newurl
+}
+
+git_reset_repo_url () {
+	# Reset the url of a git repository to clean (no PAT)
+	repourl=$(giturl)
+	repourl=$(echo $repourl | sed -e "s/.*@//g")
+	newurl="https://$repourl"
+	git remote set-url origin $newurl
 }
 
 git_update_repo_pat_url () {
 	# Update the url of a git repository to use a new PAT for gitlab
-	repourl=$(giturl)
-	IFS='@' read -ra URLARR <<< $1
-	newurl="https://$(whoami):$(cat ~/token)@${URLARR[1]}"
-	echo $newurl
-	git remote set-url origin $newurl
+	# repourl=$(giturl)
+	git_reset_repo_url
+	# IFS='@' read -ra URLARR <<< $repourl
+	# token=$(get_token $1)
+	# newurl="https://$(whoami):$token@${URLARR[1:]}"
+	# git remote set-url origin $newurl
+	git_update_repo_url
 }
 
 git_update_repo_url() {
 	# Update the url of a git repository from clean url (no PAT)
-	url=$1
-	newurl=$(echo $url | sed "s,://,://$(whoami):$(cat ~/token)@,")
-	echo $newurl
+	url=$(giturl)
+	token=$(get_token $1)
+	newurl=$(echo $url | sed "s,://,://$(whoami):$token@,")
 	git remote set-url origin $newurl
 }
 
@@ -237,4 +267,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
