@@ -73,7 +73,7 @@ git_update_repo_pat_url () {
 	# token=$(get_token $1)
 	# newurl="https://$(whoami):$token@${URLARR[1:]}"
 	# git remote set-url origin $newurl
-	git_update_repo_url
+	git_update_repo_url $1
 }
 
 git_update_repo_url() {
@@ -105,7 +105,7 @@ txttypes=(
 read -a txttypecodes <<< $( echo "$(seq 0 4)" | tr '\n' ' ' )
 for i in ${!txttypes[@]}
 do
-     eval export "${txttypes[i]}"='"\e[${txttypecodes[i]}m"'
+     eval export "${txttypes[i]}"='"\033[${txttypecodes[i]}m"'
 done
 
 # The different color codes supported by the terminal.
@@ -131,8 +131,8 @@ read -a fgcolorcodes <<< $( echo "$(seq 30 37) $(seq 90 97)"   | tr '\n' ' ' )
 read -a bgcolorcodes <<< $( echo "$(seq 40 47) $(seq 100 107)" | tr '\n' ' ' )
 for i in ${!colors[@]}; 
 do
-	eval export "${colors[i]}_BG"='"\e[${bgcolorcodes[i]}m"'
-	eval export "${colors[i]}"='"\e[${fgcolorcodes[i]}m"'
+	eval export "${colors[i]}_BG"='"\033[${bgcolorcodes[i]}m"'
+	eval export "${colors[i]}"='"\033[${fgcolorcodes[i]}m"'
 done
 
 # The different cursor styles allowed by the terminal.
@@ -147,7 +147,7 @@ cursorstyles=(
 read -a cursorstylecodes <<< $( echo "$(seq 1 6)" | tr '\n' ' ' )
 for i in ${!cursorstyles[@]}
 do
-	eval export "CURS_${cursorstyles[i]}"='"\e[${cursorstylecodes[i]} q"'
+	eval export "CURS_${cursorstyles[i]}"='"\033[${cursorstylecodes[i]} q"'
 done
 
 if [[ $- == *i* ]]
@@ -158,6 +158,8 @@ then
 fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\['"$BOLD$GREEN"'\]\u@\h'"\[$RESET"'\]:\['"$BOLD$BLUE"'\]\w\['"$RESET"'\]$ '
+
 
 
 # don't put duplicate lines or lines starting with space in the history.
