@@ -14,7 +14,10 @@ mount_point() {
 
 start_mount() {
     remote=$1
-    if [[ ! -d "$(mount_point $remote)" ]]; then 
+    echo -n "Force mount? (Y/N)"
+    read force
+
+    if [[ $force="Y" || ! -d "$(mount_point $remote)" ]]; then 
         echo -e "$BOLD${GREEN}Mounting remote service $1:$RESET"
         mkdir $(mount_point $remote) 
         rclone mount $remote: $(mount_point $remote) \
