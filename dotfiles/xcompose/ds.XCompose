@@ -1,0 +1,77 @@
+# ======================================================================
+# DOUBLE-STRUCK / BLACKBOARD BOLD ALPHABET
+# ======================================================================
+
+# Compose + d + <letter>
+# Mathematical double-struck (𝔸, 𝔹, etc.)
+# Some have dedicated code points (ℂ, ℍ, ℕ, ℙ, ℚ, ℝ, ℤ)
+
+# --- Double-struck capitals (d + uppercase) ---
+<Multi_key> <Multi_key> <d> <A> : "𝔸" U1D538  # Double-struck capital A
+<Multi_key> <Multi_key> <d> <B> : "𝔹" U1D539  # Double-struck capital B
+<Multi_key> <Multi_key> <d> <C> : "ℂ" U2102  # Double-struck capital C
+<Multi_key> <Multi_key> <d> <D> : "𝔻" U1D53B  # Double-struck capital D
+<Multi_key> <Multi_key> <d> <E> : "𝔼" U1D53C  # Double-struck capital E
+<Multi_key> <Multi_key> <d> <F> : "𝔽" U1D53D  # Double-struck capital F
+<Multi_key> <Multi_key> <d> <G> : "𝔾" U1D53E  # Double-struck capital G
+<Multi_key> <Multi_key> <d> <H> : "ℍ" U210D  # Double-struck capital H
+<Multi_key> <Multi_key> <d> <I> : "𝕀" U1D540  # Double-struck capital I
+<Multi_key> <Multi_key> <d> <J> : "𝕁" U1D541  # Double-struck capital J
+<Multi_key> <Multi_key> <d> <K> : "𝕂" U1D542  # Double-struck capital K
+<Multi_key> <Multi_key> <d> <L> : "𝕃" U1D543  # Double-struck capital L
+<Multi_key> <Multi_key> <d> <M> : "𝕄" U1D544  # Double-struck capital M
+<Multi_key> <Multi_key> <d> <N> : "ℕ" U2115  # Double-struck capital N
+<Multi_key> <Multi_key> <d> <O> : "𝕆" U1D546  # Double-struck capital O
+<Multi_key> <Multi_key> <d> <P> : "ℙ" U2119  # Double-struck capital P
+<Multi_key> <Multi_key> <d> <Q> : "ℚ" U211A  # Double-struck capital Q
+<Multi_key> <Multi_key> <d> <R> : "ℝ" U211D  # Double-struck capital R
+<Multi_key> <Multi_key> <d> <S> : "𝕊" U1D54A  # Double-struck capital S
+<Multi_key> <Multi_key> <d> <T> : "𝕋" U1D54B  # Double-struck capital T
+<Multi_key> <Multi_key> <d> <U> : "𝕌" U1D54C  # Double-struck capital U
+<Multi_key> <Multi_key> <d> <V> : "𝕍" U1D54D  # Double-struck capital V
+<Multi_key> <Multi_key> <d> <W> : "𝕎" U1D54E  # Double-struck capital W
+<Multi_key> <Multi_key> <d> <X> : "𝕏" U1D54F  # Double-struck capital X
+<Multi_key> <Multi_key> <d> <Y> : "𝕐" U1D550  # Double-struck capital Y
+<Multi_key> <Multi_key> <d> <Z> : "ℤ" U2124  # Double-struck capital Z
+
+# --- Double-struck lowercase (d + lowercase) ---
+<Multi_key> <Multi_key> <d> <a> : "𝕒" U1D552  # Double-struck small a
+<Multi_key> <Multi_key> <d> <b> : "𝕓" U1D553  # Double-struck small b
+<Multi_key> <Multi_key> <d> <c> : "𝕔" U1D554  # Double-struck small c
+<Multi_key> <Multi_key> <d> <d> : "𝕕" U1D555  # Double-struck small d
+<Multi_key> <Multi_key> <d> <e> : "𝕖" U1D556  # Double-struck small e
+<Multi_key> <Multi_key> <d> <f> : "𝕗" U1D557  # Double-struck small f
+<Multi_key> <Multi_key> <d> <g> : "𝕘" U1D558  # Double-struck small g
+<Multi_key> <Multi_key> <d> <h> : "𝕙" U1D559  # Double-struck small h
+<Multi_key> <Multi_key> <d> <i> : "𝕚" U1D55A  # Double-struck small i
+<Multi_key> <Multi_key> <d> <j> : "𝕛" U1D55B  # Double-struck small j
+<Multi_key> <Multi_key> <d> <k> : "𝕜" U1D55C  # Double-struck small k
+<Multi_key> <Multi_key> <d> <l> : "𝕝" U1D55D  # Double-struck small l
+<Multi_key> <Multi_key> <d> <m> : "𝕞" U1D55E  # Double-struck small m
+<Multi_key> <Multi_key> <d> <n> : "𝕟" U1D55F  # Double-struck small n
+<Multi_key> <Multi_key> <d> <o> : "𝕠" U1D560  # Double-struck small o
+<Multi_key> <Multi_key> <d> <p> : "𝕡" U1D561  # Double-struck small p
+<Multi_key> <Multi_key> <d> <q> : "𝕢" U1D562  # Double-struck small q
+<Multi_key> <Multi_key> <d> <r> : "𝕣" U1D563  # Double-struck small r
+<Multi_key> <Multi_key> <d> <s> : "𝕤" U1D564  # Double-struck small s
+<Multi_key> <Multi_key> <d> <t> : "𝕥" U1D565  # Double-struck small t
+<Multi_key> <Multi_key> <d> <u> : "𝕦" U1D566  # Double-struck small u
+<Multi_key> <Multi_key> <d> <v> : "𝕧" U1D567  # Double-struck small v
+<Multi_key> <Multi_key> <d> <w> : "𝕨" U1D568  # Double-struck small w
+<Multi_key> <Multi_key> <d> <x> : "𝕩" U1D569  # Double-struck small x
+<Multi_key> <Multi_key> <d> <y> : "𝕪" U1D56A  # Double-struck small y
+<Multi_key> <Multi_key> <d> <z> : "𝕫" U1D56B  # Double-struck small z
+
+# --- Double-struck digits (d + digit) ---
+<Multi_key> <Multi_key> <d> <0> : "𝟘" U1D7D8  # Double-struck digit 0
+<Multi_key> <Multi_key> <d> <1> : "𝟙" U1D7D9  # Double-struck digit 1
+<Multi_key> <Multi_key> <d> <2> : "𝟚" U1D7DA  # Double-struck digit 2
+<Multi_key> <Multi_key> <d> <3> : "𝟛" U1D7DB  # Double-struck digit 3
+<Multi_key> <Multi_key> <d> <4> : "𝟜" U1D7DC  # Double-struck digit 4
+<Multi_key> <Multi_key> <d> <5> : "𝟝" U1D7DD  # Double-struck digit 5
+<Multi_key> <Multi_key> <d> <6> : "𝟞" U1D7DE  # Double-struck digit 6
+<Multi_key> <Multi_key> <d> <7> : "𝟟" U1D7DF  # Double-struck digit 7
+<Multi_key> <Multi_key> <d> <8> : "𝟠" U1D7E0  # Double-struck digit 8
+<Multi_key> <Multi_key> <d> <9> : "𝟡" U1D7E1  # Double-struck digit 9
+
+

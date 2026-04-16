@@ -1,0 +1,77 @@
+
+# ======================================================================
+# GREEK ALPHABET
+# ======================================================================
+
+# Compose + g + <letter> for Greek
+# Lowercase letter → lowercase Greek; uppercase → uppercase Greek
+
+
+<Multi_key> <Multi_key> <g> <a> : "α" U03B1  # Greek small alpha
+<Multi_key> <Multi_key> <g> <b> : "β" U03B2  # Greek small beta
+<Multi_key> <Multi_key> <g> <g> : "γ" U03B3  # Greek small gamma
+<Multi_key> <Multi_key> <g> <d> : "δ" U03B4  # Greek small delta
+<Multi_key> <Multi_key> <g> <e> : "ε" U03B5  # Greek small epsilon
+<Multi_key> <Multi_key> <g> <z> : "ζ" U03B6  # Greek small zeta
+<Multi_key> <Multi_key> <g> <h> : "η" U03B7  # Greek small eta
+<Multi_key> <Multi_key> <g> <u> : "θ" U03B8  # Greek small theta
+<Multi_key> <Multi_key> <g> <i> : "ι" U03B9  # Greek small iota
+<Multi_key> <Multi_key> <g> <k> : "κ" U03BA  # Greek small kappa
+<Multi_key> <Multi_key> <g> <l> : "λ" U03BB  # Greek small lambda
+<Multi_key> <Multi_key> <g> <m> : "μ" U03BC  # Greek small mu
+<Multi_key> <Multi_key> <g> <n> : "ν" U03BD  # Greek small nu
+<Multi_key> <Multi_key> <g> <j> : "ξ" U03BE  # Greek small xi
+<Multi_key> <Multi_key> <g> <o> : "ο" U03BF  # Greek small omicron
+<Multi_key> <Multi_key> <g> <p> : "π" U03C0  # Greek small pi
+<Multi_key> <Multi_key> <g> <r> : "ρ" U03C1  # Greek small rho
+<Multi_key> <Multi_key> <g> <s> : "σ" U03C3  # Greek small sigma
+<Multi_key> <Multi_key> <g> <t> : "τ" U03C4  # Greek small tau
+<Multi_key> <Multi_key> <g> <y> : "υ" U03C5  # Greek small upsilon
+<Multi_key> <Multi_key> <g> <f> : "ϕ" U03D5  # Greek small phi (straight)
+<Multi_key> <Multi_key> <g> <c> : "ψ" U03C8  # Greek small psi
+<Multi_key> <Multi_key> <g> <x> : "χ" U03C7  # Greek small chi
+<Multi_key> <Multi_key> <g> <v> : "ω" U03C9  # Greek small omega
+<Multi_key> <Multi_key> <g> <w> : "ς" U03C2  # Greek small final sigma
+
+# --- Greek uppercase ---
+<Multi_key> <Multi_key> <g> <A> : "Α" U0391  # Greek capital Alpha
+<Multi_key> <Multi_key> <g> <B> : "Β" U0392  # Greek capital Beta
+<Multi_key> <Multi_key> <g> <G> : "Γ" U0393  # Greek capital Gamma
+<Multi_key> <Multi_key> <g> <D> : "Δ" U0394  # Greek capital Delta
+<Multi_key> <Multi_key> <g> <E> : "Ε" U0395  # Greek capital Epsilon
+<Multi_key> <Multi_key> <g> <Z> : "Ζ" U0396  # Greek capital Zeta
+<Multi_key> <Multi_key> <g> <H> : "Η" U0397  # Greek capital Eta
+<Multi_key> <Multi_key> <g> <U> : "Θ" U0398  # Greek capital Theta
+<Multi_key> <Multi_key> <g> <I> : "Ι" U0399  # Greek capital Iota
+<Multi_key> <Multi_key> <g> <K> : "Κ" U039A  # Greek capital Kappa
+<Multi_key> <Multi_key> <g> <L> : "Λ" U039B  # Greek capital Lambda
+<Multi_key> <Multi_key> <g> <M> : "Μ" U039C  # Greek capital Mu
+<Multi_key> <Multi_key> <g> <N> : "Ν" U039D  # Greek capital Nu
+<Multi_key> <Multi_key> <g> <J> : "Ξ" U039E  # Greek capital Xi
+<Multi_key> <Multi_key> <g> <O> : "Ο" U039F  # Greek capital Omicron
+<Multi_key> <Multi_key> <g> <P> : "Π" U03A0  # Greek capital Pi
+<Multi_key> <Multi_key> <g> <R> : "Ρ" U03A1  # Greek capital Rho
+<Multi_key> <Multi_key> <g> <S> : "Σ" U03A3  # Greek capital Sigma
+<Multi_key> <Multi_key> <g> <T> : "Τ" U03A4  # Greek capital Tau
+<Multi_key> <Multi_key> <g> <Y> : "Υ" U03A5  # Greek capital Upsilon
+<Multi_key> <Multi_key> <g> <F> : "Φ" U03A6  # Greek capital Phi
+<Multi_key> <Multi_key> <g> <C> : "Ψ" U03A8  # Greek capital Psi
+<Multi_key> <Multi_key> <g> <X> : "Χ" U03A7  # Greek capital Chi
+<Multi_key> <Multi_key> <g> <V> : "Ω" U03A9  # Greek capital Omega
+
+# --- Greek variants (Compose + g + <letter> + *) ---
+# Variant / alternative forms of Greek letters
+<Multi_key> <Multi_key> <g> <e> <asterisk> : "ϵ" U03F5  # Greek variant lunate epsilon
+<Multi_key> <Multi_key> <g> <u> <asterisk> : "ϑ" U03D1  # Greek variant script theta
+<Multi_key> <Multi_key> <g> <k> <asterisk> : "ϰ" U03F0  # Greek variant kappa symbol
+<Multi_key> <Multi_key> <g> <p> <asterisk> : "ϖ" U03D6  # Greek variant pi symbol (variant)
+<Multi_key> <Multi_key> <g> <r> <asterisk> : "ϱ" U03F1  # Greek variant rho symbol (variant ϱ)
+<Multi_key> <Multi_key> <g> <f> <asterisk> : "φ" U03C6  # Greek variant phi (curly φ)
+<Multi_key> <Multi_key> <g> <s> <asterisk> : "ς" U03C2  # Greek variant final sigma
+<Multi_key> <Multi_key> <g> <E> <asterisk> : "ϵ" U03F5  # Greek variant lunate epsilon (cap key)
+<Multi_key> <Multi_key> <g> <R> <asterisk> : "ϱ" U03F1  # Greek variant rho symbol (cap key)
+<Multi_key> <Multi_key> <g> <Y> <asterisk> : "ϒ" U03D2  # Greek variant Upsilon with hook
+<Multi_key> <Multi_key> <g> <W> <asterisk> : "ϖ" U03D6  # Greek variant pi symbol (cap key)
+<Multi_key> <Multi_key> <g> <H> <asterisk> : "φ" U03C6  # Greek curly phi (alternate access)
+
+
