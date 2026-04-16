@@ -1,0 +1,77 @@
+# ======================================================================
+# MATH BOLD ALPHABET
+# ======================================================================
+
+# Compose + B + <letter>
+# Mathematical bold (𝐀, 𝐚, etc.)
+
+# --- Math bold capitals (B + uppercase) ---
+<Multi_key> <Multi_key> <B> <A> : "𝐀" U1D400  # Math bold capital A
+<Multi_key> <Multi_key> <B> <B> : "𝐁" U1D401  # Math bold capital B
+<Multi_key> <Multi_key> <B> <C> : "𝐂" U1D402  # Math bold capital C
+<Multi_key> <Multi_key> <B> <D> : "𝐃" U1D403  # Math bold capital D
+<Multi_key> <Multi_key> <B> <E> : "𝐄" U1D404  # Math bold capital E
+<Multi_key> <Multi_key> <B> <F> : "𝐅" U1D405  # Math bold capital F
+<Multi_key> <Multi_key> <B> <G> : "𝐆" U1D406  # Math bold capital G
+<Multi_key> <Multi_key> <B> <H> : "𝐇" U1D407  # Math bold capital H
+<Multi_key> <Multi_key> <B> <I> : "𝐈" U1D408  # Math bold capital I
+<Multi_key> <Multi_key> <B> <J> : "𝐉" U1D409  # Math bold capital J
+<Multi_key> <Multi_key> <B> <K> : "𝐊" U1D40A  # Math bold capital K
+<Multi_key> <Multi_key> <B> <L> : "𝐋" U1D40B  # Math bold capital L
+<Multi_key> <Multi_key> <B> <M> : "𝐌" U1D40C  # Math bold capital M
+<Multi_key> <Multi_key> <B> <N> : "𝐍" U1D40D  # Math bold capital N
+<Multi_key> <Multi_key> <B> <O> : "𝐎" U1D40E  # Math bold capital O
+<Multi_key> <Multi_key> <B> <P> : "𝐏" U1D40F  # Math bold capital P
+<Multi_key> <Multi_key> <B> <Q> : "𝐐" U1D410  # Math bold capital Q
+<Multi_key> <Multi_key> <B> <R> : "𝐑" U1D411  # Math bold capital R
+<Multi_key> <Multi_key> <B> <S> : "𝐒" U1D412  # Math bold capital S
+<Multi_key> <Multi_key> <B> <T> : "𝐓" U1D413  # Math bold capital T
+<Multi_key> <Multi_key> <B> <U> : "𝐔" U1D414  # Math bold capital U
+<Multi_key> <Multi_key> <B> <V> : "𝐕" U1D415  # Math bold capital V
+<Multi_key> <Multi_key> <B> <W> : "𝐖" U1D416  # Math bold capital W
+<Multi_key> <Multi_key> <B> <X> : "𝐗" U1D417  # Math bold capital X
+<Multi_key> <Multi_key> <B> <Y> : "𝐘" U1D418  # Math bold capital Y
+<Multi_key> <Multi_key> <B> <Z> : "𝐙" U1D419  # Math bold capital Z
+
+# --- Math bold lowercase (B + lowercase) ---
+<Multi_key> <Multi_key> <B> <a> : "𝐚" U1D41A  # Math bold small a
+<Multi_key> <Multi_key> <B> <b> : "𝐛" U1D41B  # Math bold small b
+<Multi_key> <Multi_key> <B> <c> : "𝐜" U1D41C  # Math bold small c
+<Multi_key> <Multi_key> <B> <d> : "𝐝" U1D41D  # Math bold small d
+<Multi_key> <Multi_key> <B> <e> : "𝐞" U1D41E  # Math bold small e
+<Multi_key> <Multi_key> <B> <f> : "𝐟" U1D41F  # Math bold small f
+<Multi_key> <Multi_key> <B> <g> : "𝐠" U1D420  # Math bold small g
+<Multi_key> <Multi_key> <B> <h> : "𝐡" U1D421  # Math bold small h
+<Multi_key> <Multi_key> <B> <i> : "𝐢" U1D422  # Math bold small i
+<Multi_key> <Multi_key> <B> <j> : "𝐣" U1D423  # Math bold small j
+<Multi_key> <Multi_key> <B> <k> : "𝐤" U1D424  # Math bold small k
+<Multi_key> <Multi_key> <B> <l> : "𝐥" U1D425  # Math bold small l
+<Multi_key> <Multi_key> <B> <m> : "𝐦" U1D426  # Math bold small m
+<Multi_key> <Multi_key> <B> <n> : "𝐧" U1D427  # Math bold small n
+<Multi_key> <Multi_key> <B> <o> : "𝐨" U1D428  # Math bold small o
+<Multi_key> <Multi_key> <B> <p> : "𝐩" U1D429  # Math bold small p
+<Multi_key> <Multi_key> <B> <q> : "𝐪" U1D42A  # Math bold small q
+<Multi_key> <Multi_key> <B> <r> : "𝐫" U1D42B  # Math bold small r
+<Multi_key> <Multi_key> <B> <s> : "𝐬" U1D42C  # Math bold small s
+<Multi_key> <Multi_key> <B> <t> : "𝐭" U1D42D  # Math bold small t
+<Multi_key> <Multi_key> <B> <u> : "𝐮" U1D42E  # Math bold small u
+<Multi_key> <Multi_key> <B> <v> : "𝐯" U1D42F  # Math bold small v
+<Multi_key> <Multi_key> <B> <w> : "𝐰" U1D430  # Math bold small w
+<Multi_key> <Multi_key> <B> <x> : "𝐱" U1D431  # Math bold small x
+<Multi_key> <Multi_key> <B> <y> : "𝐲" U1D432  # Math bold small y
+<Multi_key> <Multi_key> <B> <z> : "𝐳" U1D433  # Math bold small z
+
+
+# --- Math bold digits (B + digit) ---
+<Multi_key> <Multi_key> <B> <0> : "𝟎" U1D7CE  # Math bold digit 0
+<Multi_key> <Multi_key> <B> <1> : "𝟏" U1D7CF  # Math bold digit 1
+<Multi_key> <Multi_key> <B> <2> : "𝟐" U1D7D0  # Math bold digit 2
+<Multi_key> <Multi_key> <B> <3> : "𝟑" U1D7D1  # Math bold digit 3
+<Multi_key> <Multi_key> <B> <4> : "𝟒" U1D7D2  # Math bold digit 4
+<Multi_key> <Multi_key> <B> <5> : "𝟓" U1D7D3  # Math bold digit 5
+<Multi_key> <Multi_key> <B> <6> : "𝟔" U1D7D4  # Math bold digit 6
+<Multi_key> <Multi_key> <B> <7> : "𝟕" U1D7D5  # Math bold digit 7
+<Multi_key> <Multi_key> <B> <8> : "𝟖" U1D7D6  # Math bold digit 8
+<Multi_key> <Multi_key> <B> <9> : "𝟗" U1D7D7  # Math bold digit 9
+
+

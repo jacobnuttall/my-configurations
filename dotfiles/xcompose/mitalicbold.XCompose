@@ -1,0 +1,63 @@
+# ======================================================================
+# MATH BOLD ITALIC ALPHABET
+# ======================================================================
+
+# Compose + B + i + <letter>
+
+# --- Math bold italic capitals ---
+<Multi_key> <Multi_key> <B> <i> <A> : "𝑨" U1D468  # Math bold italic capital A
+<Multi_key> <Multi_key> <B> <i> <B> : "𝑩" U1D469  # Math bold italic capital B
+<Multi_key> <Multi_key> <B> <i> <C> : "𝑪" U1D46A  # Math bold italic capital C
+<Multi_key> <Multi_key> <B> <i> <D> : "𝑫" U1D46B  # Math bold italic capital D
+<Multi_key> <Multi_key> <B> <i> <E> : "𝑬" U1D46C  # Math bold italic capital E
+<Multi_key> <Multi_key> <B> <i> <F> : "𝑭" U1D46D  # Math bold italic capital F
+<Multi_key> <Multi_key> <B> <i> <G> : "𝑮" U1D46E  # Math bold italic capital G
+<Multi_key> <Multi_key> <B> <i> <H> : "𝑯" U1D46F  # Math bold italic capital H
+<Multi_key> <Multi_key> <B> <i> <I> : "𝑰" U1D470  # Math bold italic capital I
+<Multi_key> <Multi_key> <B> <i> <J> : "𝑱" U1D471  # Math bold italic capital J
+<Multi_key> <Multi_key> <B> <i> <K> : "𝑲" U1D472  # Math bold italic capital K
+<Multi_key> <Multi_key> <B> <i> <L> : "𝑳" U1D473  # Math bold italic capital L
+<Multi_key> <Multi_key> <B> <i> <M> : "𝑴" U1D474  # Math bold italic capital M
+<Multi_key> <Multi_key> <B> <i> <N> : "𝑵" U1D475  # Math bold italic capital N
+<Multi_key> <Multi_key> <B> <i> <O> : "𝑶" U1D476  # Math bold italic capital O
+<Multi_key> <Multi_key> <B> <i> <P> : "𝑷" U1D477  # Math bold italic capital P
+<Multi_key> <Multi_key> <B> <i> <Q> : "𝑸" U1D478  # Math bold italic capital Q
+<Multi_key> <Multi_key> <B> <i> <R> : "𝑹" U1D479  # Math bold italic capital R
+<Multi_key> <Multi_key> <B> <i> <S> : "𝑺" U1D47A  # Math bold italic capital S
+<Multi_key> <Multi_key> <B> <i> <T> : "𝑻" U1D47B  # Math bold italic capital T
+<Multi_key> <Multi_key> <B> <i> <U> : "𝑼" U1D47C  # Math bold italic capital U
+<Multi_key> <Multi_key> <B> <i> <V> : "𝑽" U1D47D  # Math bold italic capital V
+<Multi_key> <Multi_key> <B> <i> <W> : "𝑾" U1D47E  # Math bold italic capital W
+<Multi_key> <Multi_key> <B> <i> <X> : "𝑿" U1D47F  # Math bold italic capital X
+<Multi_key> <Multi_key> <B> <i> <Y> : "𝒀" U1D480  # Math bold italic capital Y
+<Multi_key> <Multi_key> <B> <i> <Z> : "𝒁" U1D481  # Math bold italic capital Z
+
+# --- Math bold italic lowercase ---
+<Multi_key> <Multi_key> <B> <i> <a> : "𝒂" U1D482  # Math bold italic small a
+<Multi_key> <Multi_key> <B> <i> <b> : "𝒃" U1D483  # Math bold italic small b
+<Multi_key> <Multi_key> <B> <i> <c> : "𝒄" U1D484  # Math bold italic small c
+<Multi_key> <Multi_key> <B> <i> <d> : "𝒅" U1D485  # Math bold italic small d
+<Multi_key> <Multi_key> <B> <i> <e> : "𝒆" U1D486  # Math bold italic small e
+<Multi_key> <Multi_key> <B> <i> <f> : "𝒇" U1D487  # Math bold italic small f
+<Multi_key> <Multi_key> <B> <i> <g> : "𝒈" U1D488  # Math bold italic small g
+<Multi_key> <Multi_key> <B> <i> <h> : "𝒉" U1D489  # Math bold italic small h
+<Multi_key> <Multi_key> <B> <i> <i> : "𝒊" U1D48A  # Math bold italic small i
+<Multi_key> <Multi_key> <B> <i> <j> : "𝒋" U1D48B  # Math bold italic small j
+<Multi_key> <Multi_key> <B> <i> <k> : "𝒌" U1D48C  # Math bold italic small k
+<Multi_key> <Multi_key> <B> <i> <l> : "𝒍" U1D48D  # Math bold italic small l
+<Multi_key> <Multi_key> <B> <i> <m> : "𝒎" U1D48E  # Math bold italic small m
+<Multi_key> <Multi_key> <B> <i> <n> : "𝒏" U1D48F  # Math bold italic small n
+<Multi_key> <Multi_key> <B> <i> <o> : "𝒐" U1D490  # Math bold italic small o
+<Multi_key> <Multi_key> <B> <i> <p> : "𝒑" U1D491  # Math bold italic small p
+<Multi_key> <Multi_key> <B> <i> <q> : "𝒒" U1D492  # Math bold italic small q
+<Multi_key> <Multi_key> <B> <i> <r> : "𝒓" U1D493  # Math bold italic small r
+<Multi_key> <Multi_key> <B> <i> <s> : "𝒔" U1D494  # Math bold italic small s
+<Multi_key> <Multi_key> <B> <i> <t> : "𝒕" U1D495  # Math bold italic small t
+<Multi_key> <Multi_key> <B> <i> <u> : "𝒖" U1D496  # Math bold italic small u
+<Multi_key> <Multi_key> <B> <i> <v> : "𝒗" U1D497  # Math bold italic small v
+<Multi_key> <Multi_key> <B> <i> <w> : "𝒘" U1D498  # Math bold italic small w
+<Multi_key> <Multi_key> <B> <i> <x> : "𝒙" U1D499  # Math bold italic small x
+<Multi_key> <Multi_key> <B> <i> <y> : "𝒚" U1D49A  # Math bold italic small y
+<Multi_key> <Multi_key> <B> <i> <z> : "𝒛" U1D49B  # Math bold italic small z
+
+
