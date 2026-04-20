@@ -1,0 +1,55 @@
+# ======================================================================
+# ARROWS
+# ======================================================================
+
+# Shape-based: use - and = for single/double, < > for direction
+# Thin arrows use -, fat/double arrows use =
+
+# --- Simple arrows ---
+<Multi_key> <Multi_key> <minus> <greater> : "→" U2192  # Rightwards arrow →
+<Multi_key> <Multi_key> <less> <minus> : "←" U2190  # Leftwards arrow ←
+<Multi_key> <Multi_key> <minus> <asciicircum> : "↑" U2191  # Upwards arrow ↑
+<Multi_key> <Multi_key> <minus> <v> : "↓" U2193  # Downwards arrow ↓
+<Multi_key> <Multi_key> <less> <minus> <greater> : "↔" U2194  # Left right arrow ↔
+<Multi_key> <Multi_key> <minus> <bar> <minus> : "↕" U2195  # Up down arrow ↕
+
+# --- Double arrows (⇒ ⇐ ⇔) ---
+<Multi_key> <Multi_key> <equal> <greater> : "⇒" U21D2  # Rightwards double arrow ⇒
+<Multi_key> <Multi_key> <equal> <less> : "⇐" U21D0  # Leftwards double arrow ⇐
+<Multi_key> <Multi_key> <less> <equal> <greater> : "⇔" U21D4  # Left right double arrow ⇔
+<Multi_key> <Multi_key> <equal> <asciicircum> : "⇑" U21D1  # Upwards double arrow ⇑
+<Multi_key> <Multi_key> <equal> <v> : "⇓" U21D3  # Downwards double arrow ⇓
+<Multi_key> <Multi_key> <asciicircum> <equal> <v> : "⇕" U21D5  # Up down double arrow ⇕
+
+# --- Long arrows ---
+<Multi_key> <Multi_key> <minus> <minus> <greater> : "⟶" U27F6  # Long rightwards arrow ⟶
+<Multi_key> <Multi_key> <less> <minus> <minus> : "⟵" U27F5  # Long leftwards arrow ⟵
+<Multi_key> <Multi_key> <less> <minus> <minus> <greater> : "⟷" U27F7  # Long left right arrow ⟷
+<Multi_key> <Multi_key> <equal> <equal> <greater> : "⟹" U27F9  # Long rightwards double arrow ⟹
+<Multi_key> <Multi_key> <less> <equal> <equal> : "⟸" U27F8  # Long leftwards double arrow ⟸
+<Multi_key> <Multi_key> <less> <equal> <equal> <greater> : "⟺" U27FA  # Long left right double arrow ⟺
+
+# --- Diagonal and special arrows ---
+<Multi_key> <Multi_key> <minus> <greater> <slash> : "↗" U2197  # North east arrow ↗
+<Multi_key> <Multi_key> <minus> <greater> <backslash> : "↘" U2198  # South east arrow ↘
+<Multi_key> <Multi_key> <less> <minus> <backslash> : "↙" U2199  # South west arrow ↙
+<Multi_key> <Multi_key> <less> <minus> <slash> : "↖" U2196  # North west arrow ↖
+<Multi_key> <Multi_key> <bar> <minus> <greater> : "↦" U21A6  # Rightwards arrow from bar ↦ (mapsto)
+<Multi_key> <Multi_key> <less> <minus> <bar> : "↤" U21A4  # Leftwards arrow from bar ↤
+<Multi_key> <Multi_key> <minus> <greater> <bar> : "⇥" U21E5  # Rightwards arrow to bar ⇥
+<Multi_key> <Multi_key> <minus> <greater> <exclam> : "⇸" U21F8  # Rightwards arrow with stroke (partial fn)
+<Multi_key> <Multi_key> <minus> <greater> <greater> : "↠" U21A0  # Rightwards two headed arrow ↠ (surjection)
+<Multi_key> <Multi_key> <greater> <minus> <greater> : "↣" U21A3  # Rightwards arrow with tail ↣ (injection)
+<Multi_key> <Multi_key> <greater> <minus> <greater> <greater> : "⤖" U2916  # Rightwards two-headed arrow with tail (bijection)
+<Multi_key> <Multi_key> <minus> <greater> <asciitilde> : "⇝" U21DD  # Rightwards squiggle arrow ⇝
+<Multi_key> <Multi_key> <less> <asciitilde> <minus> : "⇜" U21DC  # Leftwards squiggle arrow ⇜
+
+# --- Harpoons ---
+<Multi_key> <Multi_key> <minus> <greater> <u> : "⇀" U21C0  # Righwards harpoon with barb up ⇀
+<Multi_key> <Multi_key> <minus> <greater> <d> : "⇁" U21C1  # Rightwards harpoon with barb down ⇁
+<Multi_key> <Multi_key> <less> <minus> <u> : "↼" U21BC  # Leftwards harpoon with barb up ↼
+<Multi_key> <Multi_key> <less> <minus> <d> : "↽" U21BD  # Leftwards harpoon with barb down ↽
+<Multi_key> <Multi_key> <minus> <greater> <less> <minus> : "⇌" U21CC  # Rightwards over leftwards harpoon ⇌ (equilibrium)
+<Multi_key> <Multi_key> <less> <asciitilde> <minus> <greater> : "⇋" U21CB  # Leftwards over rightwards harpoon ⇋
+
+

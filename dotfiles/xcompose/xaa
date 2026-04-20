@@ -1,4 +1,0 @@
-include "%H/.config/xcompose/greek.XCompose"
-include "%H/.config/xcompose/script.XCompose"
-include "%H/.config/xcompose/ds.XCompose"
-include "%H/.config/xcompose/fraktur.XCompose"

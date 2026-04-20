@@ -15,131 +15,7 @@
 # To use: copy to ~/.XCompose and set GTK_IM_MODULE=xim or use ibus/fcitx.
 # Include the default compose table:
 include "%L"
-# ======================================================================
-# SUPERSCRIPTS
-# ======================================================================
-
 # Compose + ^ + <key>
-
-# --- Superscript digits ---
-<Multi_key> <Multi_key> <asciicircum> <0> : "⁰" U2070  # Superscript 0
-<Multi_key> <Multi_key> <asciicircum> <1> : "¹" U00B9  # Superscript 1
-<Multi_key> <Multi_key> <asciicircum> <2> : "²" U00B2  # Superscript 2
-<Multi_key> <Multi_key> <asciicircum> <3> : "³" U00B3  # Superscript 3
-<Multi_key> <Multi_key> <asciicircum> <4> : "⁴" U2074  # Superscript 4
-<Multi_key> <Multi_key> <asciicircum> <5> : "⁵" U2075  # Superscript 5
-<Multi_key> <Multi_key> <asciicircum> <6> : "⁶" U2076  # Superscript 6
-<Multi_key> <Multi_key> <asciicircum> <7> : "⁷" U2077  # Superscript 7
-<Multi_key> <Multi_key> <asciicircum> <8> : "⁸" U2078  # Superscript 8
-<Multi_key> <Multi_key> <asciicircum> <9> : "⁹" U2079  # Superscript 9
-
-# --- Superscript lowercase letters ---
-# Unicode has modifier letters for most but not all Latin letters.
-# Missing from Unicode: superscript q (no standard codepoint exists).
-<Multi_key> <Multi_key> <asciicircum> <a> : "ᵃ" U1D43  # Superscript a
-<Multi_key> <Multi_key> <asciicircum> <b> : "ᵇ" U1D47  # Superscript b
-<Multi_key> <Multi_key> <asciicircum> <c> : "ᶜ" U1D9C  # Superscript c
-<Multi_key> <Multi_key> <asciicircum> <d> : "ᵈ" U1D48  # Superscript d
-<Multi_key> <Multi_key> <asciicircum> <e> : "ᵉ" U1D49  # Superscript e
-<Multi_key> <Multi_key> <asciicircum> <f> : "ᶠ" U1DA0  # Superscript f
-<Multi_key> <Multi_key> <asciicircum> <g> : "ᵍ" U1D4D  # Superscript g
-<Multi_key> <Multi_key> <asciicircum> <h> : "ʰ" U02B0  # Superscript h
-<Multi_key> <Multi_key> <asciicircum> <i> : "ⁱ" U2071  # Superscript i
-<Multi_key> <Multi_key> <asciicircum> <j> : "ʲ" U02B2  # Superscript j
-<Multi_key> <Multi_key> <asciicircum> <k> : "ᵏ" U1D4F  # Superscript k
-<Multi_key> <Multi_key> <asciicircum> <l> : "ˡ" U02E1  # Superscript l
-<Multi_key> <Multi_key> <asciicircum> <m> : "ᵐ" U1D50  # Superscript m
-<Multi_key> <Multi_key> <asciicircum> <n> : "ⁿ" U207F  # Superscript n
-<Multi_key> <Multi_key> <asciicircum> <o> : "ᵒ" U1D52  # Superscript o
-<Multi_key> <Multi_key> <asciicircum> <p> : "ᵖ" U1D56  # Superscript p
-<Multi_key> <Multi_key> <asciicircum> <r> : "ʳ" U02B3  # Superscript r
-<Multi_key> <Multi_key> <asciicircum> <s> : "ˢ" U02E2  # Superscript s
-<Multi_key> <Multi_key> <asciicircum> <t> : "ᵗ" U1D57  # Superscript t
-<Multi_key> <Multi_key> <asciicircum> <u> : "ᵘ" U1D58  # Superscript u
-<Multi_key> <Multi_key> <asciicircum> <v> : "ᵛ" U1D5B  # Superscript v
-<Multi_key> <Multi_key> <asciicircum> <w> : "ʷ" U02B7  # Superscript w
-<Multi_key> <Multi_key> <asciicircum> <x> : "ˣ" U02E3  # Superscript x
-<Multi_key> <Multi_key> <asciicircum> <y> : "ʸ" U02B8  # Superscript y
-<Multi_key> <Multi_key> <asciicircum> <z> : "ᶻ" U1DBB  # Superscript z
-# # No Unicode superscript q exists.
-
-# --- Superscript uppercase letters ---
-# Unicode has fewer superscript capitals. Missing: C, F, Q, S, X, Y, Z.
-<Multi_key> <Multi_key> <asciicircum> <A> : "ᴬ" U1D2C  # Superscript A
-<Multi_key> <Multi_key> <asciicircum> <B> : "ᴮ" U1D2E  # Superscript B
-<Multi_key> <Multi_key> <asciicircum> <D> : "ᴰ" U1D30  # Superscript D
-<Multi_key> <Multi_key> <asciicircum> <E> : "ᴱ" U1D31  # Superscript E
-<Multi_key> <Multi_key> <asciicircum> <G> : "ᴳ" U1D33  # Superscript G
-<Multi_key> <Multi_key> <asciicircum> <H> : "ᴴ" U1D34  # Superscript H
-<Multi_key> <Multi_key> <asciicircum> <I> : "ᴵ" U1D35  # Superscript I
-<Multi_key> <Multi_key> <asciicircum> <J> : "ᴶ" U1D36  # Superscript J
-<Multi_key> <Multi_key> <asciicircum> <K> : "ᴷ" U1D37  # Superscript K
-<Multi_key> <Multi_key> <asciicircum> <L> : "ᴸ" U1D38  # Superscript L
-<Multi_key> <Multi_key> <asciicircum> <M> : "ᴹ" U1D39  # Superscript M
-<Multi_key> <Multi_key> <asciicircum> <N> : "ᴺ" U1D3A  # Superscript N
-<Multi_key> <Multi_key> <asciicircum> <O> : "ᴼ" U1D3C  # Superscript O
-<Multi_key> <Multi_key> <asciicircum> <P> : "ᴾ" U1D3E  # Superscript P
-<Multi_key> <Multi_key> <asciicircum> <R> : "ᴿ" U1D3F  # Superscript R
-<Multi_key> <Multi_key> <asciicircum> <T> : "ᵀ" U1D40  # Superscript T
-<Multi_key> <Multi_key> <asciicircum> <U> : "ᵁ" U1D41  # Superscript U
-<Multi_key> <Multi_key> <asciicircum> <V> : "ⱽ" U2C7D  # Superscript V
-<Multi_key> <Multi_key> <asciicircum> <W> : "ᵂ" U1D42  # Superscript W
-# # No Unicode superscript C, F, Q, S, X, Y, Z exist.
-
-# --- Superscript symbols ---
-<Multi_key> <Multi_key> <asciicircum> <plus> : "⁺" U207A  # Superscript plus
-<Multi_key> <Multi_key> <asciicircum> <minus> : "⁻" U207B  # Superscript minus
-<Multi_key> <Multi_key> <asciicircum> <equal> : "⁼" U207C  # Superscript equals
-<Multi_key> <Multi_key> <asciicircum> <parenleft> : "⁽" U207D  # Superscript left paren
-<Multi_key> <Multi_key> <asciicircum> <parenright> : "⁾" U207E  # Superscript right paren
-
-# ======================================================================
-# SUBSCRIPTS
-# ======================================================================
-
-# Compose + _ + <key>
-
-# --- Subscript digits ---
-<Multi_key> <Multi_key> <underscore> <0> : "₀" U2080  # Subscript 0
-<Multi_key> <Multi_key> <underscore> <1> : "₁" U2081  # Subscript 1
-<Multi_key> <Multi_key> <underscore> <2> : "₂" U2082  # Subscript 2
-<Multi_key> <Multi_key> <underscore> <3> : "₃" U2083  # Subscript 3
-<Multi_key> <Multi_key> <underscore> <4> : "₄" U2084  # Subscript 4
-<Multi_key> <Multi_key> <underscore> <5> : "₅" U2085  # Subscript 5
-<Multi_key> <Multi_key> <underscore> <6> : "₆" U2086  # Subscript 6
-<Multi_key> <Multi_key> <underscore> <7> : "₇" U2087  # Subscript 7
-<Multi_key> <Multi_key> <underscore> <8> : "₈" U2088  # Subscript 8
-<Multi_key> <Multi_key> <underscore> <9> : "₉" U2089  # Subscript 9
-
-# --- Subscript lowercase letters ---
-# Unicode has subscript forms for: a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v, x.
-# Missing from Unicode: subscript b, c, d, f, g, q, w, y, z.
-<Multi_key> <Multi_key> <underscore> <a> : "ₐ" U2090  # Subscript a
-<Multi_key> <Multi_key> <underscore> <e> : "ₑ" U2091  # Subscript e
-<Multi_key> <Multi_key> <underscore> <h> : "ₕ" U2095  # Subscript h
-<Multi_key> <Multi_key> <underscore> <i> : "ᵢ" U1D62  # Subscript i
-<Multi_key> <Multi_key> <underscore> <j> : "ⱼ" U2C7C  # Subscript j
-<Multi_key> <Multi_key> <underscore> <k> : "ₖ" U2096  # Subscript k
-<Multi_key> <Multi_key> <underscore> <l> : "ₗ" U2097  # Subscript l
-<Multi_key> <Multi_key> <underscore> <m> : "ₘ" U2098  # Subscript m
-<Multi_key> <Multi_key> <underscore> <n> : "ₙ" U2099  # Subscript n
-<Multi_key> <Multi_key> <underscore> <o> : "ₒ" U2092  # Subscript o
-<Multi_key> <Multi_key> <underscore> <p> : "ₚ" U209A  # Subscript p
-<Multi_key> <Multi_key> <underscore> <r> : "ᵣ" U1D63  # Subscript r
-<Multi_key> <Multi_key> <underscore> <s> : "ₛ" U209B  # Subscript s
-<Multi_key> <Multi_key> <underscore> <t> : "ₜ" U209C  # Subscript t
-<Multi_key> <Multi_key> <underscore> <u> : "ᵤ" U1D64  # Subscript u
-<Multi_key> <Multi_key> <underscore> <v> : "ᵥ" U1D65  # Subscript v
-<Multi_key> <Multi_key> <underscore> <x> : "ₓ" U2093  # Subscript x
-# # No Unicode subscript b, c, d, f, g, q, w, y, z exist.
-
-# --- Subscript symbols ---
-<Multi_key> <Multi_key> <underscore> <plus> : "₊" U208A  # Subscript plus
-<Multi_key> <Multi_key> <underscore> <minus> : "₋" U208B  # Subscript minus
-<Multi_key> <Multi_key> <underscore> <equal> : "₌" U208C  # Subscript equals
-<Multi_key> <Multi_key> <underscore> <parenleft> : "₍" U208D  # Subscript left paren
-<Multi_key> <Multi_key> <underscore> <parenright> : "₎" U208E  # Subscript right paren
-
 # ======================================================================
 # FRACTIONS
 # ======================================================================
@@ -174,60 +50,6 @@ include "%L"
 <Multi_key> <Multi_key> <slash> <slash> <2> : "√" U221A  # Square root √
 <Multi_key> <Multi_key> <slash> <slash> <3> : "∛" U221B  # Cube root ∛
 <Multi_key> <Multi_key> <slash> <slash> <4> : "∜" U221C  # Fourth root ∜
-
-# ======================================================================
-# ARROWS
-# ======================================================================
-
-# Shape-based: use - and = for single/double, < > for direction
-# Thin arrows use -, fat/double arrows use =
-
-# --- Simple arrows ---
-<Multi_key> <Multi_key> <minus> <greater> : "→" U2192  # Rightwards arrow →
-<Multi_key> <Multi_key> <less> <minus> : "←" U2190  # Leftwards arrow ←
-<Multi_key> <Multi_key> <minus> <asciicircum> : "↑" U2191  # Upwards arrow ↑
-<Multi_key> <Multi_key> <minus> <v> : "↓" U2193  # Downwards arrow ↓
-<Multi_key> <Multi_key> <less> <minus> <greater> : "↔" U2194  # Left right arrow ↔
-<Multi_key> <Multi_key> <minus> <bar> <minus> : "↕" U2195  # Up down arrow ↕
-
-# --- Double arrows (⇒ ⇐ ⇔) ---
-<Multi_key> <Multi_key> <equal> <greater> : "⇒" U21D2  # Rightwards double arrow ⇒
-<Multi_key> <Multi_key> <equal> <less> : "⇐" U21D0  # Leftwards double arrow ⇐
-<Multi_key> <Multi_key> <less> <equal> <greater> : "⇔" U21D4  # Left right double arrow ⇔
-<Multi_key> <Multi_key> <equal> <asciicircum> : "⇑" U21D1  # Upwards double arrow ⇑
-<Multi_key> <Multi_key> <equal> <v> : "⇓" U21D3  # Downwards double arrow ⇓
-<Multi_key> <Multi_key> <asciicircum> <equal> <v> : "⇕" U21D5  # Up down double arrow ⇕
-
-# --- Long arrows ---
-<Multi_key> <Multi_key> <minus> <minus> <greater> : "⟶" U27F6  # Long rightwards arrow ⟶
-<Multi_key> <Multi_key> <less> <minus> <minus> : "⟵" U27F5  # Long leftwards arrow ⟵
-<Multi_key> <Multi_key> <less> <minus> <minus> <greater> : "⟷" U27F7  # Long left right arrow ⟷
-<Multi_key> <Multi_key> <equal> <equal> <greater> : "⟹" U27F9  # Long rightwards double arrow ⟹
-<Multi_key> <Multi_key> <less> <equal> <equal> : "⟸" U27F8  # Long leftwards double arrow ⟸
-<Multi_key> <Multi_key> <less> <equal> <equal> <greater> : "⟺" U27FA  # Long left right double arrow ⟺
-
-# --- Diagonal and special arrows ---
-<Multi_key> <Multi_key> <minus> <greater> <slash> : "↗" U2197  # North east arrow ↗
-<Multi_key> <Multi_key> <minus> <greater> <backslash> : "↘" U2198  # South east arrow ↘
-<Multi_key> <Multi_key> <less> <minus> <backslash> : "↙" U2199  # South west arrow ↙
-<Multi_key> <Multi_key> <less> <minus> <slash> : "↖" U2196  # North west arrow ↖
-<Multi_key> <Multi_key> <bar> <minus> <greater> : "↦" U21A6  # Rightwards arrow from bar ↦ (mapsto)
-<Multi_key> <Multi_key> <less> <minus> <bar> : "↤" U21A4  # Leftwards arrow from bar ↤
-<Multi_key> <Multi_key> <minus> <greater> <bar> : "⇥" U21E5  # Rightwards arrow to bar ⇥
-<Multi_key> <Multi_key> <minus> <greater> <exclam> : "⇸" U21F8  # Rightwards arrow with stroke (partial fn)
-<Multi_key> <Multi_key> <minus> <greater> <greater> : "↠" U21A0  # Rightwards two headed arrow ↠ (surjection)
-<Multi_key> <Multi_key> <greater> <minus> <greater> : "↣" U21A3  # Rightwards arrow with tail ↣ (injection)
-<Multi_key> <Multi_key> <greater> <minus> <greater> <greater> : "⤖" U2916  # Rightwards two-headed arrow with tail (bijection)
-<Multi_key> <Multi_key> <minus> <greater> <asciitilde> : "⇝" U21DD  # Rightwards squiggle arrow ⇝
-<Multi_key> <Multi_key> <less> <asciitilde> <minus> : "⇜" U21DC  # Leftwards squiggle arrow ⇜
-
-# --- Harpoons ---
-<Multi_key> <Multi_key> <minus> <greater> <u> : "⇀" U21C0  # Righwards harpoon with barb up ⇀
-<Multi_key> <Multi_key> <minus> <greater> <d> : "⇁" U21C1  # Rightwards harpoon with barb down ⇁
-<Multi_key> <Multi_key> <less> <minus> <u> : "↼" U21BC  # Leftwards harpoon with barb up ↼
-<Multi_key> <Multi_key> <less> <minus> <d> : "↽" U21BD  # Leftwards harpoon with barb down ↽
-<Multi_key> <Multi_key> <minus> <greater> <less> <minus> : "⇌" U21CC  # Rightwards over leftwards harpoon ⇌ (equilibrium)
-<Multi_key> <Multi_key> <less> <asciitilde> <minus> <greater> : "⇋" U21CB  # Leftwards over rightwards harpoon ⇋
 
 # ======================================================================
 # LOGIC & QUANTIFIERS
@@ -370,8 +192,8 @@ include "%L"
 <Multi_key> <Multi_key> <slash> <i> <i> : "∬" U222C  # Double integral ∬
 <Multi_key> <Multi_key> <slash> <i> <i> <i> : "∭" U222D  # Triple integral ∭
 <Multi_key> <Multi_key> <slash> <i> <o> : "∮" U222E  # Contour integral ∮
-<Multi_key> <Multi_key> <slash> <i> <o> <o> : "∯" U222F  # Surface integral ∯
-<Multi_key> <Multi_key> <slash> <i> <o> <o> <o> : "∰" U2230  # Volume integral ∰
+<Multi_key> <Multi_key> <slash> <i> <i> <o> : "∯" U222F  # Surface integral ∯
+<Multi_key> <Multi_key> <slash> <i> <i> <i> <o> : "∰" U2230  # Volume integral ∰
 
 # ======================================================================
 # CALCULUS & ANALYSIS
