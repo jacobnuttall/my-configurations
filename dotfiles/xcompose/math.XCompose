@@ -164,6 +164,7 @@ include "%L"
 
 # --- Basic operators ---
 <Multi_key> <Multi_key> <x> <x> : "×" U00D7  # Multiplication sign ×
+<Multi_key> <Multi_key> <asterisk> <x> : "×" U00D7 # Multiplication sign ×
 <Multi_key> <Multi_key> <period> <period> : "⋅" U22C5  # Dot operator ⋅
 <Multi_key> <Multi_key> <asterisk> <period> : "∙" U2219  # Bullet operator ∙
 <Multi_key> <Multi_key> <asterisk> <asterisk> : "⋆" U22C6  # Star operator ⋆

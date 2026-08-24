@@ -1,1 +1,2 @@
+include "%L"
 include "%H/.config/xcompose/my.XCompose"
