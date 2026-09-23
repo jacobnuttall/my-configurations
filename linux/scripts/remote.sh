@@ -2,7 +2,7 @@
 
 #TODO: Define a function to show available remote services.
 
-source colors.sh
+source ~/.scripts/colors.sh
 
 mount_point() {
     remote=$1
