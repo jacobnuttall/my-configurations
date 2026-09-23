@@ -1,3 +1,2 @@
 # linux swap files
-.swo
-.swp
+*.sw?
