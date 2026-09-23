@@ -71,7 +71,7 @@ fi
 
 
 read -r -p $'Clone, compile and install \e[36mtmux\e[0m? [y/N] ' prompt
-if [ ${prompt@L} == "y" ]; then
+if [ "${prompt@L}" == "y" ]; then
 sudo mkdir -p $git_folder
 cd $git_folder
 doclone="y"
