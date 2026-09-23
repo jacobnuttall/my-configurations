@@ -205,6 +205,7 @@ echo -e "Go to https://www.paraview.org/download/ and copy the download link to 
 read -r -p "Enter the url of the download link here: " url
 sudo wget $url
 paraview_file=$(ls | grep ParaView)
+paraview_name=${paraview_file%%.tar.gz}
 
 sudo tar -xvf $paraview_name.tar.gz
 sudo rm -fv $paraview_name.tar.gz
