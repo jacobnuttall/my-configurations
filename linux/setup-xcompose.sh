@@ -9,9 +9,13 @@ else
 echo "Gracefully exiting without overwriting/deleting existing .XCompose file."
 fi	
 
-ln -s "$(pwd)/dotfiles/home/.XCompose" $HOME
+if [ ! -a ~/.XCompose ] ; then
+ln -s "$(pwd)/dotfiles/home/XCompose" $HOME/.XCompose
 ln -s "$(pwd)/dotfiles/xcompose/" $HOME/.config
+echo "Made symbolic links to .XCompose files."
+fi 
+
+
 ibus restart
 
-echo "Made symbolic links to .XCompose files."
 

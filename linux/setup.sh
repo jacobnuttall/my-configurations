@@ -89,7 +89,7 @@ sudo make install
 fi
 
 read -r -p $'Clone, compile and install \e[36mvim\e[0m? [y/N] ' prompt
-if [ ${prompt@L} == "y" ]; then
+if [ "${prompt@L}" == "y" ]; then
 sudo apt install libncurses-dev
 sudo mkdir -p $git_folder
 cd $git_folder
@@ -105,7 +105,7 @@ sudo make install
 fi 
 
 read -r -p $'Clone, compile and install \e[36mneovim\e[0m ? [y/N] ' prompt
-if [ ${prompt@L} == "y" ]; then 
+if [ "${prompt@L}" == "y" ]; then 
 sudo mkdir -p $git_folder
 cd $git_folder
 doclone="y"
@@ -120,7 +120,7 @@ sudo make install
 fi
 
 read -r -p $'Download and Install \e[36mrclone\e[0m? [y/N] ' prompt
-if [ "${prompt@L}" == "y" ]; then 
+if [ ""${prompt@L}"" == "y" ]; then 
 cd /tmp
 sudo rm -fv ./rclone*
 echo "Downloading and installing rclone"
@@ -264,11 +264,11 @@ mkdir -p $HOME/Develop
 cd $HOME/Develop
 
 doclone="y"
-if [ -d vim ]; then 
+if [ -d my-configurations ]; then 
 	read -r -p  $'\e[31m Located existing directory `my-configurations`.\e[0m Would you like to reset (delete) this directory and reclone?\e[0m  [y/N] ' doclone
 fi
 [ "${doclone@L}" == "y" ] && rm -rfv $HOME/my-configurations && git clone git@github.com:jacobnuttall/my-configurations.git && echo "cloned my-configurations repository to ~/Develop "
-cd my-configurations 
+cd my-configurations/linux
 
 read -r -p "Enable XCompose? [Y/n] " prompt
 if [[ "y" == *"$prompt"* ]];
@@ -280,14 +280,12 @@ Steps:
 4. Click ``Position of Compose Key``. Typical is ``Right Alt``
 5. Close out of the menu.
 After doing so, press ENTER to continue." _
-
 echo "Setting up xcompose symlinks and structure.sh"
-
 bash setup-xcompose.sh
-bash setup-scripts.sh
-
 fi
 
+bash setup-profile.sh
+bash setup-scripts.sh
 
 }
 
