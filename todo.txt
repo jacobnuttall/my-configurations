@@ -3,5 +3,8 @@ Linux initialization:
 - Install TeX live distribution
 - setup udev rules
 
+- Add ways to check against known hashes.
+
 Windows Initialization:
 - Document in powershell scripts to setup programs in windows, like I did for linux.
+

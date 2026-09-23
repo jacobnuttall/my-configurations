@@ -69,7 +69,6 @@ read -r -p "\nSign into 1Password desktop app, then press ENTER to continue." _
 read -r -p "\nInstall 1Password extensions for browser(s), then press ENTER to continue." _
 fi
 
-
 read -r -p $'Clone, compile and install \e[36mtmux\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 sudo mkdir -p $git_folder
@@ -119,36 +118,51 @@ sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 fi
 
+read -r -p $'Download and Install \e[36mMiniconda\e[0m? [y/N] ' prompt 
+if [ "${prompt@L}" == "y" ]; then
+cd ~/Downloads
+url="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+filename=${url##*/}
+curl -O $url
+hashsum=$(sha256sum $filename | awk '{ print $1 }')
+echo "Installer $filename has hash $hashsum"
+echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/ to check for corruption: "
+read -r -p "Input the sha256 checksum value found online here: " checksum
+[ "$hashsum" = "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
+[ "$proceed" = "y" ] && bash $filename
+
+fi
+
 read -r -p $'Download and Install \e[36mrclone\e[0m? [y/N] ' prompt
-if [ ""${prompt@L}"" == "y" ]; then 
-cd /tmp
-sudo rm -fv ./rclone*
+if [ "${prompt@L}" == "y" ]; then 
+cd ~/Downloads
+rm -fv ./rclone*
 echo "Downloading and installing rclone"
-sudo wget https://downloads.rclone.org/rclone-current-linux-amd64.deb
+wget https://downloads.rclone.org/rclone-current-linux-amd64.deb
 sudo apt install ./rclone*
 read -r -p $'\nNow, configure the desired cloud services to mount using rclone, then press enter.' _
-sudo rm -fv ./rclone*
+rm -fv ./rclone*
 fi
 
 read -r -p $'Download and Install \e[36mVirtualbox\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
-cd /tmp
-sudo rm -fv ./virtualbox*
+cd ~/Downloads
+rm -fv ./virtualbox*
 echo "Downloading and installing Virtualbox"
-sudo wget https://download.virtualbox.org/virtualbox/7.2.20/virtualbox-7.2_7.2.20-175154~Ubuntu~noble_amd64.deb
+wget https://download.virtualbox.org/virtualbox/7.2.20/virtualbox-7.2_7.2.20-175154~Ubuntu~noble_amd64.deb
 sudo apt install ./virtualbox*
 read -r -p $'\nNow, download desired ISO files for the OS's you'd like to use as virtual machines (e.g., linux distros, Windows), setup VMs, then press ENTER to continue' _
-sudo rm -fv ./virtualbox*
+rm -fv ./virtualbox*
 fi
 
 read -r -p $'Download and install \e[36mVS Code\e[0m? from apt? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
-cd /tmp
-sudo rm -fv ./code*
+cd ~/Downloads
+rm -fv ./code*
 echo "Downloading and installing VS Code."
-sudo wget -O code-latest.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+wget -O code-latest.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
 sudo apt install ./code*
-sudo rm -fv ./code*
+rm -fv ./code*
 fi
 
 read -r -p $'Download and install \e[36mTeXstudio AppImage\e[0m? [y/N] ' prompt
@@ -198,19 +212,21 @@ fi
 
 read -r -p $'Download and install \e[36mParaView\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
-cd /tmp
-sudo rm -rfv ParaView*
+cd ~/Downloads
+rm -rfv ParaView*
 cd 
 echo -e "Go to https://www.paraview.org/download/ and copy the download link to the desired version of ParaView."
 read -r -p "Enter the url of the download link here: " url
-sudo wget $url
-paraview_file=$(ls | grep ParaView)
-paraview_name=${paraview_file%%.tar.gz}
 
-sudo tar -xvf $paraview_name.tar.gz
-sudo rm -fv $paraview_name.tar.gz
-sudo mkdir -p /opt/paraview
-sudo mv $paraview_name /opt/paraview
+paraview_file=${url##*=}
+paraview_name=${paraview_file%%.tar.gz}
+wget -O $paraview_file $url
+sudo rm -rfv /opt/paraview/$paraview_name
+sudo mkdir -p /opt/paraview/
+tar -xvf $paraview_name.tar.gz
+sudo mv $paraview_name/ -t /opt/paraview/
+rm -fv $paraview_name.tar.gz
+
 read -r -p $'\nNow, add /opt/paraview/$paraview_name/bin to your path (e.g., in ``.bashrc``), then press ENTER to continue. ' _
 fi
 
@@ -220,12 +236,12 @@ function additional_programs() {
 
 read -r -p $'Download and install \e[36mGoogle chrome\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
-cd /tmp
-sudo rm -fv ./google-chrome*
+cd ~/Downloads
+rm -fv ./google-chrome*
 echo "Downloading and installing Google chrome."
-sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+get https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome*
-sudo rm -fv ./google-chrome*
+rm -fv ./google-chrome*
 fi
 
 read -r -p $'Install \e[36mBlender\e[0m from apt [y/N] ' prompt
