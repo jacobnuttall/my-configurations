@@ -1,0 +1,7 @@
+Linux initialization:
+- Add desktop entries for paraview, obsidian, texstudio, etc.
+- Install TeX live distribution
+- setup udev rules
+
+Windows Initialization:
+- Document in powershell scripts to setup programs in windows, like I did for linux.
