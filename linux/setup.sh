@@ -15,10 +15,8 @@ function main() {
 read -r -p $'Update and upgrade packages?  [Y/n] ' prompt
 [ "${prompt@L}" == "n" ] || (sudo apt update && sudo apt upgrade && sudo apt autoremove)
 
-\
 read -r -p $'Install commonly needed packages like cmake and git? [y/N] ' prompt 
 [ "${prompt@L}" == "y" ] && install_packages
-
 
 read -r -p $'Download and install commonly needed programs like 1Password, neovim and tmux? [y/N] ' prompt
 [ "${prompt@L}" == "y" ] && essential_programs
@@ -57,6 +55,7 @@ function essential_programs() {
 mkdir -p $HOME/.local/opt; 
 git_folder=/srv/git
 
+# —————————— 1Password ——————————
 read -r -p  $'Download and install \e[36m1Password\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 cd $HOME/Downloads
@@ -68,7 +67,7 @@ rm -vf ./1password*
 read -r -p "\nSign into 1Password desktop app, then press ENTER to continue." _
 read -r -p "\nInstall 1Password extensions for browser(s), then press ENTER to continue." _
 fi
-
+#  —————————— tmux ——————————
 read -r -p $'Clone, compile and install \e[36mtmux\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 sudo mkdir -p $git_folder
@@ -87,6 +86,7 @@ sudo ./configure && sudo make
 sudo make install
 fi
 
+#  —————————— vim ——————————
 read -r -p $'Clone, compile and install \e[36mvim\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 sudo apt install libncurses-dev
@@ -103,6 +103,7 @@ sudo make
 sudo make install
 fi 
 
+# —————————— neovim ——————————
 read -r -p $'Clone, compile and install \e[36mneovim\e[0m ? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
 sudo mkdir -p $git_folder
@@ -118,6 +119,7 @@ sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 fi
 
+# —————————— miniconda ——————————
 read -r -p $'Download and Install \e[36mMiniconda\e[0m? [y/N] ' prompt 
 if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
@@ -133,6 +135,7 @@ read -r -p "Input the sha256 checksum value found online here: " checksum
 
 fi
 
+#  —————————— rclone ——————————
 read -r -p $'Download and Install \e[36mrclone\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
 cd ~/Downloads
@@ -144,6 +147,7 @@ read -r -p $'\nNow, configure the desired cloud services to mount using rclone, 
 rm -fv ./rclone*
 fi
 
+# —————————— Virtualbox ——————————
 read -r -p $'Download and Install \e[36mVirtualbox\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
 cd ~/Downloads
@@ -155,6 +159,7 @@ read -r -p $'\nNow, download desired ISO files for the OS's you'd like to use as
 rm -fv ./virtualbox*
 fi
 
+#  —————————— VS Code  ——————————
 read -r -p $'Download and install \e[36mVS Code\e[0m? from apt? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
@@ -165,6 +170,7 @@ sudo apt install ./code*
 rm -fv ./code*
 fi
 
+#  —————————— TexStudio ——————————
 read -r -p $'Download and install \e[36mTeXstudio AppImage\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ] ; then
 cd $HOME/Downloads
@@ -188,6 +194,7 @@ echo "Moved downloaded AppImage file to ~/.local/opt/texstudio and made symlink 
 read -r -p "\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue." _
 fi
 
+#  —————————— Obsidian ——————————
 read -r -p $'Download and install \e[36mObsidian AppImage\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ] ; then
 cd $HOME/Downloads
@@ -210,12 +217,14 @@ echo "Moved downloaded AppImage file to ~/.local/opt/obsidian and made symlink a
 read -r -p $'\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue.' _
 fi
 
+#  —————————— Mathematica  ——————————
 read -r -p $'Download and install \e[36mMathematica and/or Wolfram Engine\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
 echo "Go to https://www.wolfram.com/ and follow the instructions to install Mathematica/Wolfram Engin. "
 read -r -p "press ENTER to continue." 
 fi
 
+#  —————————— ParaView  ——————————
 read -r -p $'Download and install \e[36mParaView\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
@@ -236,10 +245,7 @@ rm -fv $paraview_name.tar.gz
 read -r -p $'\nNow, add /opt/paraview/$paraview_name/bin to your path (e.g., in ``.bashrc``), then press ENTER to continue. ' _
 fi
 
-}
-
-function additional_programs() {
-
+# —————————— Google Chrome  ——————————
 read -r -p $'Download and install \e[36mGoogle chrome\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then 
 cd ~/Downloads
@@ -250,20 +256,26 @@ sudo apt install ./google-chrome*
 rm -fv ./google-chrome*
 fi
 
+# —————————— Blender  ——————————	
 read -r -p $'Install \e[36mBlender\e[0m from apt [y/N] ' prompt
 [ "${prompt@L}" == "y" ] && sudo apt install blender blender-doc
 
+#  —————————— Audacity  ——————————
 read -r -p $'Install \e[36mAudacity\e[0m from apt? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && sudo apt install audacity
 
+# —————————— Gimp ——————————
 read -r -p $'Install \e[36mGimp\e[0m from apt? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && sudo apt install gimp gimp-help-en gimp-data-extras gsfonts graphviz-doc 
 
+
+# —————————— Spotify ——————————
 read -r -p $'Install \e[36mSpotify\e[0m from apt? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && sudo apt install spotify-client
 
 
 }
+
 
 function configure_git() { 
 read -r -p "Enter the email (e.g., you@example.com) you wish to use by default for git repositories: " email
