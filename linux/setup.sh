@@ -210,6 +210,12 @@ echo "Moved downloaded AppImage file to ~/.local/opt/obsidian and made symlink a
 read -r -p $'\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue.' _
 fi
 
+read -r -p $'Download and install \e[36mMathematica and/or Wolfram Engine\e[0m? [y/N] ' prompt
+if [ "${prompt@L}" == "y" ]; then 
+echo "Go to https://www.wolfram.com/ and follow the instructions to install Mathematica/Wolfram Engin. "
+read -r -p "press ENTER to continue." 
+fi
+
 read -r -p $'Download and install \e[36mParaView\e[0m? [y/N] ' prompt
 if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
@@ -309,6 +315,5 @@ bash setup-scripts.sh
 function install_udev_via() {
 echo "TODO"
 }
-
 
 main
