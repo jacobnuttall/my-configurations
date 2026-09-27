@@ -77,7 +77,7 @@ if [ -d tmux ]; then
 	read -r -p  $'\e[31m Located existing directory `tmux`.\e[0m  Would you like to reset (delete) this directory and redownload tmux?\e[0m [y/N] ' doclone
 fi
 sudo apt install libevent-dev ncurses-dev build-essential bison pkg-config automake autoconf-archive gnu-standards autoconf-doc libtool
-[ "${doclone@L}" == "y" ] && sudo rm -rfv tmux && sudo git clone https://github.com/tmux/tmux.git && echo "\nCloned tmux to $git_folder.\n"
+[ "${doclone@L}" == "y" ] && sudo rm -rfv tmux && sudo git clone https://github.com/tmux/tmux.git && echo -e "\nCloned tmux to $git_folder.\n"
 
 cd tmux 
 sudo git pull
@@ -96,7 +96,7 @@ doclone="y"
 if [ -d vim ]; then 
 	read -r -p  $'\e[31m Located existing directory `vim`.\e[0m Would you like to reset (delete) this directory and download vim?\e[0m  [y/N] ' doclone
 fi
-[ "${doclone@L}" == "y" ] && sudo rm -rfv vim && sudo git clone https://github.com/vim/vim.git  && echo "\nCloned vim to $git_folder\n."
+[ "${doclone@L}" == "y" ] && sudo rm -rfv vim && sudo git clone https://github.com/vim/vim.git  && echo -e "\nCloned vim to $git_folder\n."
 cd vim
 sudo git pull
 sudo make
@@ -112,7 +112,7 @@ doclone="y"
 if [ -d neovim ]; then 
 	read -r -p  $'\e[31m Located existing directory `neovim`.\e[0m Would you like to reset (delete) this directory and download neovim?  [y/N] ' doclone
 fi
-[ "${doclone@L}" == "y" ] && sudo rm -rfv neovim && sudo git clone https://github.com/neovim/neovim.git && echo "\nCloned neovim to $git_folder\n."
+[ "${doclone@L}" == "y" ] && sudo rm -rfv neovim && sudo git clone https://github.com/neovim/neovim.git && echo -e "\nCloned neovim to $git_folder\n."
 cd neovim
 sudo git pull
 sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -251,7 +251,7 @@ if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
 rm -fv ./google-chrome*
 echo "Downloading and installing Google chrome."
-get https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome*
 rm -fv ./google-chrome*
 fi
@@ -287,7 +287,7 @@ git config --global user.name $name
 function configure_git_ssh_key() {
 cd $HOME/.ssh
 ssh-keygen -t ed25519  -f github
-echo "Public key generated: \n"
+echo -e "Public key generated: \n"
 cat $HOME/.ssh/github.pub
 read -r -p $'\nAdd public key to github profile then press ENTER to continue.' _
 
