@@ -132,8 +132,11 @@ echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/
 read -r -p "Input the sha256 checksum value found online here: " checksum
 [ "$hashsum" = "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
 [ "$proceed" = "y" ] && bash $filename
-
 fi
+
+#  —————————— Lean programming language  ——————————
+read -r -p $'Install \e[36melan (lean package manager)\e[0m through apt? [y/N] ' prompt
+[ "${prompt@L}" == "y" ] && sudo apt install elan
 
 #  —————————— rclone ——————————
 read -r -p $'Download and Install \e[36mrclone\e[0m? [y/N] ' prompt
