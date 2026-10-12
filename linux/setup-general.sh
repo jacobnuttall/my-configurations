@@ -6,6 +6,8 @@
 # Obsidian : install 
 
 script_path=$(realpath ${BASH_SOURCE[0]})
+script_dir=${script_path%/*}
+echo $script_dir
 
 # prompt template
 # read -r -p $'\e[36m <TEXT> \e[0m [Y/n] ' prompt
@@ -180,12 +182,12 @@ cd $HOME/Downloads
 rm -fv texstudio*
 rm -fv $HOME/.local/bin/texstudio
 [ -d $HOME/.local/opt/texstudio ] \
-	&& echo "Removing previous installation of obsidian." \
+	&& echo "Removing previous installation of TexStudio." \
 	&& rm -rfv $HOME/.local/opt/texstudio
 mkdir -p $HOME/.local/opt/texstudio
 mkdir -p $HOME/.local/bin
 
-echo -e "Go to https://www.texstudio.org/#download and copy the download link for the latest version of Obsidian."
+echo -e "Go to https://www.texstudio.org/#download and copy the download link for the latest version of TexStudio (AppImage)."
 read -r -p $'Enter the url of the download link here: ' url
 wget $url
 texstudio_file=$(ls | grep texstudio)
@@ -194,7 +196,10 @@ mv texstudio* -t $HOME/.local/opt/texstudio
 chmod +x $HOME/.local/opt/texstudio/texstudio*
 ln -s $HOME/.local/opt/texstudio/$texstudio_file $HOME/.local/bin/texstudio
 echo "Moved downloaded AppImage file to ~/.local/opt/texstudio and made symlink at ~/.local/bin/texstudio"
-read -r -p "\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue." _
+# read -r -p "\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue." _
+ln -s "$script_dir/local/share/applications/texstudio.desktop" -t "$HOME/.local/share/applications/"
+echo "Copied texstudio.desktop file to $HOME/.local/share/applications/".
+chmod +x "$HOME/.local/share/applications/texstudio.desktop"
 fi
 
 #  —————————— Obsidian ——————————
@@ -208,16 +213,19 @@ rm -fv $HOME/.local/bin/obsidian
 	&& rm -rfv $HOME/.local/opt/obsidian
 mkdir -p $HOME/.local/opt/obsidian
 mkdir -p $HOME/.local/bin
-echo -e "Go to https://obsidian.md/download and copy the download link for the latest version of Obsidian."
+echo -e "Go to https://obsidian.md/download and copy the download link for the latest version of Obsidian (AppImage)."
 read -r -p $'\nEnter the url of the download link here: ' url
 wget $url
 obsidian_file=$(ls | grep Obsidian)
 
-mv Obsidian* -t $HOME/.local/opt/obsidian
-chmod +x $HOME/.local/opt/obsidian/Obsidian*
-ln -s $HOME/.local/opt/obsidian/$obsidian_file $HOME/.local/bin/obsidian
+mv Obsidian* -t "$HOME/.local/opt/obsidian"
+chmod +x "$HOME/.local/opt/obsidian/Obsidian*"
+ln -s "$HOME/.local/opt/obsidian/$obsidian_file" "$HOME/.local/bin/obsidian"
 echo "Moved downloaded AppImage file to ~/.local/opt/obsidian and made symlink at ~/.local/bin/obsidian"
-read -r -p $'\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue.' _
+# read -r -p $'\nNow, add ~/.local/bin to your path variable (e.g., in ``.bashrc``), then press ENTER to continue.' _
+ln -s "$script_dir/local/share/applications/obsidian.desktop" -t "$HOME/.local/share/applications/"
+chmod +x "$HOME/.local/share/applications/obsidian.desktop"
+echo "Copied obsidian.desktop file to $HOME/.local/share/applications/".
 fi
 
 #  —————————— Mathematica  ——————————
