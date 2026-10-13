@@ -1,0 +1,14 @@
+
+Files I had downloaded before accidentally deleting the directory.
+
+
+00ed7ea3401fe1605ecaffeca76dc7ec.gif   GitHub-sgtaziz_lian-li-linux_LinuxGitHub.pdf             OpenRGBEffectsPlugin_1.0rc2_Linux_amd64_415dc20.so   Win11_25H2_English_x64.iso
+ 0R_iwsUM.html                          Miniconda3-latest-Linux-x86_64.sh                        openrgb-udev-install.sh                              wljs-notebook-3.0.1-amd64-gnulinux.deb
+ box.nb                                 MSIAfterburnerSetup.zip                                  p1a_def_vs_ref.png                                   wljs-notebook-3.0.1-arm64-gnulinux.AppImage
+ cmake-4.4.4-linux-x86_64.sh            msiz8gc4u5b91.png                                        PlotDeformationSolidStatic.pdf                       wljs-notebook-3.0.1-x64-gnulinux.zip
+'cmake-4.4.4-SHA-256(1).txt'            nvidia-temp@sophie-la-li.zip                             PlotDeformationStatic.nb                             Wolfram_15.0.1.sh
+'cmake-4.4.4-SHA-256(2).txt'            OpenRGB_1.0rc2_x86_64_0fca93e.AppImage                   Sensors@claudiux.zip                                 WolframEngine_14.3.0_LIN.sh
+ cmake-4.4.4-SHA-256.txt                OpenRGB_1.0_x86_64_81bbe18.AppImage                      setup.sh                                             Zotero-8.0.4_linux-x86_64.tar.xz
+ cmake-4.4.4-SHA-256.txt.1              OpenRGBEffectsPlugin_1.0rc2_Bookworm_amd64_415dc20.deb   Untitled.jpeg                                        Zotero_linux-x86_64
+
+

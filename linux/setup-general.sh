@@ -17,11 +17,8 @@ function main() {
 read -r -p $'Update and upgrade packages?  [Y/n] ' prompt
 [ "${prompt@L}" == "n" ] || (sudo apt update && sudo apt upgrade && sudo apt autoremove)
 
-read -r -p $'Install commonly needed packages like cmake and git? [y/N] ' prompt 
-[ "${prompt@L}" == "y" ] && install_packages
-
-read -r -p $'Download and install commonly needed programs like 1Password, neovim and tmux? [y/N] ' prompt
-[ "${prompt@L}" == "y" ] && essential_programs
+read -r -p $'Download and install commonly needed programs like cmake, git, 1Password, neovim and tmux? [y/N] ' prompt
+[ "${prompt@L}" == "y" ] && install_packages && essential_programs
 
 read -r -p $'Install additional programs like Blender and Gimp? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && additional_programs
@@ -49,13 +46,41 @@ read -r -p $'Download and install Tex live distribution? [y/N] ' prompt
 
 function install_packages() {
 sudo apt install cmake 
-sudo apt install git
 }
 
 function essential_programs() {
 
 mkdir -p $HOME/.local/opt; 
 git_folder=/srv/git
+
+read -r -p $'Install \e[36mgit\e[0m from apt? [y/N] ' prompt 
+if [ $"{prompt@L}" == "y" ]; then 
+sudo apt install git 
+fi 
+
+read -r -p $'Download and install latest version of \e[36mcmake\e[0m? [y/N]' prompt
+if [ "${prompt@L}" == "y" ]; then
+cd ~/Downloads
+echo -e "Go to https://cmake.org/download/ 
+fi
+
+
+# —————————— miniconda ——————————
+read -r -p $'Download and Install \e[36mMiniconda\e[0m? [y/N] ' prompt 
+if [ "${prompt@L}" == "y" ]; then
+cd ~/Downloads
+url="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+filename=${url##*/}
+curl -O $url
+hashsum=$(sha256sum $filename | awk '{ print $1 }')
+echo "Installer $filename has hash $hashsum"
+echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/ to check for corruption: "
+read -r -p "Input the sha256 checksum value found online here: " checksum
+[ "$hashsum" = "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
+[ "$proceed" = "y" ] && bash $filename
+fi
+
+
 
 # —————————— 1Password ——————————
 read -r -p  $'Download and install \e[36m1Password\e[0m? [y/N] ' prompt
@@ -187,7 +212,7 @@ rm -fv $HOME/.local/bin/texstudio
 mkdir -p $HOME/.local/opt/texstudio
 mkdir -p $HOME/.local/bin
 
-echo -e "Go to https://www.texstudio.org/#download and copy the download link for the latest version of TexStudio (AppImage)."
+echo -e 'Go to https://www.texstudio.org/#download and copy the download link for the latest version of TexStudio (AppImage).'
 read -r -p $'Enter the url of the download link here: ' url
 wget $url
 texstudio_file=$(ls | grep texstudio)
