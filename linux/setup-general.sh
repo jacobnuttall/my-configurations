@@ -184,7 +184,7 @@ fi
 
 #  —————————— Lean programming language  ——————————
 read -r -p $'Install \e[36melan (lean package manager)\e[0m through apt? [y/N] ' prompt
-[ "${prompt@L}" == "y" ] && sudo apt install elan
+[ "${prompt@L}" == "y" ] && curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
 
 #  —————————— rclone ——————————
 read -r -p $'Download and Install \e[36mrclone\e[0m? [y/N] ' prompt
