@@ -3,7 +3,11 @@
 # Author : Jacob Nuttall
 # Configuration script for setting up my configuration on linux mint 23
 
-# Obsidian : install 
+# TODO:
+# - setup paraview symbolic links
+# - setup desktop files in /local/share/applications along with icons
+# - maybe make more interactive so I don't have to go through the entire script to get programs configured the same way? Eg. if I have already used this to configure a system.
+#
 
 script_path=$(realpath ${BASH_SOURCE[0]})
 script_dir=${script_path%/*}
@@ -18,7 +22,7 @@ read -r -p $'Update and upgrade packages?  [Y/n] ' prompt
 [ "${prompt@L}" == "n" ] || (sudo apt update && sudo apt upgrade && sudo apt autoremove)
 
 read -r -p $'Download and install commonly needed programs like cmake, git, 1Password, neovim and tmux? [y/N] ' prompt
-[ "${prompt@L}" == "y" ] && install_packages && essential_programs
+[ "${prompt@L}" == "y" ] && essential_programs
 
 read -r -p $'Install additional programs like Blender and Gimp? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && additional_programs
@@ -44,43 +48,60 @@ read -r -p $'Download and install Tex live distribution? [y/N] ' prompt
 
 }
 
-function install_packages() {
-sudo apt install cmake 
-}
-
 function essential_programs() {
 
 mkdir -p $HOME/.local/opt; 
 git_folder=/srv/git
 
-read -r -p $'Install \e[36mgit\e[0m from apt? [y/N] ' prompt 
-if [ $"{prompt@L}" == "y" ]; then 
+# —————————— git ——————————
+
+# Git is necessary for pretty much anything, so just install it by default if we don't find it in the system.
+gitcmd=$(which git)
+[ "${gitcmd}" == "" ] && prompt="y" ||  read -r -p $'(Re-)Install \e[36mgit\e[0m from apt? [y/N] ' prompt 
+if [ "${prompt@L}" == "y" ]; then 
 sudo apt install git 
 fi 
 
+
+# —————————— cmake ——————————
 read -r -p $'Download and install latest version of \e[36mcmake\e[0m? [y/N]' prompt
 if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
-echo -e "Go to https://cmake.org/download/ 
+echo -e "Go to https://cmake.org/download/ and copy the download link for /bin/sh installer for the latest version of cmake."
+read -r -p $'Enter the url of the download link for cmake sh installer here: ' url 
+wget $url
+cmake_sh=${url##*/}
+echo "Now, enter the download link for the latest version of the cryptographic hashes summary file."
+read -r -p $'Enter the url of the download link here for cmake sha256 summary file here: ' url
+wget $url
+summary_file=${url##*/}
+hashsum=$(sha256sum $cmake_sh | awk '{ print $1 }')
+checksum=$(cat $summary_file | grep $cmake_sh | awk '{ print $1 }')
+echo "Installer $cmake_sh has hash $hashsum"
+[ "$hashsum" == "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
+if [ "$proceed" == "y" ] ; then
+sudo mkdir -p /opt/cmake
+sudo cp $cmake_sh /opt/cmake
+cd /opt/cmake
+version=${cmake_sh##cmake-}
+version=${cmake_sh%%-linux*}
+
+echo "Installing cmake. Keep the default choices so links may be set properly."
+sudo bash $cmake_sh
+sudo rm $cmake_sh
+cd *$version*/bin
+
+echo "Setting up symbolic links to /usr/local/bin"
+for file in $(ls); do
+	sudo rm -v /usr/local/bin/$file
+	sudo ln -s $PWD/$file -t /usr/local/bin
+done
+
 fi
-
-
-# —————————— miniconda ——————————
-read -r -p $'Download and Install \e[36mMiniconda\e[0m? [y/N] ' prompt 
-if [ "${prompt@L}" == "y" ]; then
 cd ~/Downloads
-url="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
-filename=${url##*/}
-curl -O $url
-hashsum=$(sha256sum $filename | awk '{ print $1 }')
-echo "Installer $filename has hash $hashsum"
-echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/ to check for corruption: "
-read -r -p "Input the sha256 checksum value found online here: " checksum
-[ "$hashsum" = "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
-[ "$proceed" = "y" ] && bash $filename
+rm -v $cmake_sh*
+rm -v $summary_file*
 fi
-
-
 
 # —————————— 1Password ——————————
 read -r -p  $'Download and install \e[36m1Password\e[0m? [y/N] ' prompt
@@ -276,6 +297,7 @@ sudo rm -rfv /opt/paraview/$paraview_name
 sudo mkdir -p /opt/paraview/
 tar -xvf $paraview_name.tar.gz
 sudo mv $paraview_name/ -t /opt/paraview/
+
 rm -fv $paraview_name.tar.gz
 
 read -r -p $'\nNow, add /opt/paraview/$paraview_name/bin to your path (e.g., in ``.bashrc``), then press ENTER to continue. ' _
@@ -308,8 +330,6 @@ read -r -p $'Install \e[36mGimp\e[0m from apt? [y/N]' prompt
 # —————————— Spotify ——————————
 read -r -p $'Install \e[36mSpotify\e[0m from apt? [y/N]' prompt
 [ "${prompt@L}" == "y" ] && sudo apt install spotify-client
-
-
 }
 
 
