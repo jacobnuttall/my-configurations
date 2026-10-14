@@ -75,10 +75,10 @@ echo "Now, enter the download link for the latest version of the cryptographic h
 read -r -p $'Enter the url of the download link here for cmake sha256 summary file here: ' url
 wget $url
 summary_file=${url##*/}
-hashsum=$(sha256sum $cmake_sh | awk '{ print $1 }')
-checksum=$(cat $summary_file | grep $cmake_sh | awk '{ print $1 }')
-echo "Installer $cmake_sh has hash $hashsum"
-[ "$hashsum" == "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
+checkhash=$(sha256sum $cmake_sh | awk '{ print $1 }')
+validhash=$(cat $summary_file | grep $cmake_sh | awk '{ print $1 }')
+echo "Installer $cmake_sh has hash $checkhash"
+[ "$checkhash" == "$validhash" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
 if [ "$proceed" == "y" ] ; then
 sudo mkdir -p /opt/cmake
 sudo cp $cmake_sh /opt/cmake
@@ -174,11 +174,11 @@ cd ~/Downloads
 url="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 filename=${url##*/}
 curl -O $url
-hashsum=$(sha256sum $filename | awk '{ print $1 }')
-echo "Installer $filename has hash $hashsum"
+checkhash=$(sha256sum $filename | awk '{ print $1 }')
+echo "Installer $filename has hash $checkhash"
 echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/ to check for corruption: "
-read -r -p "Input the sha256 checksum value found online here: " checksum
-[ "$hashsum" = "$checksum" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
+r:ad -r -p "Input the sha256 hash value found online here: " validhash
+[ "$checkhash" = "$validhash" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
 [ "$proceed" = "y" ] && bash $filename
 fi
 
