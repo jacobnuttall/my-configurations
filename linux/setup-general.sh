@@ -177,7 +177,7 @@ curl -O $url
 checkhash=$(sha256sum $filename | awk '{ print $1 }')
 echo "Installer $filename has hash $checkhash"
 echo "Compare installer hash against sum at https://repo.anaconda.com/miniconda/ to check for corruption: "
-r:ad -r -p "Input the sha256 hash value found online here: " validhash
+read -r -p "Input the sha256 hash value found online here: " validhash
 [ "$checkhash" = "$validhash" ] && echo "Checksums match. It is safe to proceed with installation." && proceed="y" || proceed="n"
 [ "$proceed" = "y" ] && bash $filename
 fi
